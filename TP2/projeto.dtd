@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT project (informacoes, workteam, abstract, deliverables)+ >
+
+<!ELEMENT informacoes (titulo, subtitulo?, begin_date, end_date, supervisor) >
+<!ELEMENT titulo (#PCDATA) >
+<!ELEMENT subtitulo (#PCDATA) >
+<!ELEMENT begin_date (#PCDATA) >
+<!ELEMENT end_date (#PCDATA) >
+<!ELEMENT supervisor (#PCDATA) >
+<!ATTLIST supervisor
+    link CDATA #REQUIRED >
+
+<!ELEMENT workteam (membro)+ >
+<!ELEMENT membro (nome, email) >
+<!ATTLIST membro
+    numero ID #REQUIRED >
+<!ELEMENT nome (#PCDATA) >
+<!ELEMENT email (#PCDATA) >
+<!ATTLIST email
+    link CDATA #REQUIRED >
+
+<!ELEMENT abstract (paragrafo)+ >
+<!ELEMENT paragrafo (texto | formatado | link_interno | link_externo)+ >
+<!ELEMENT texto (#PCDATA) >
+<!ELEMENT formatado (#PCDATA) >
+<!ATTLIST formatado 
+    tipo (bold|italico|sublinhado) "bold" >
+<!ELEMENT link_interno (#PCDATA) >
+<!ATTLIST link_interno
+    link IDREF #REQUIRED >
+<!ELEMENT link_externo (#PCDATA) >
+<!ATTLIST link_externo
+    link CDATA #REQUIRED >
+
+<!ELEMENT deliverables (item)+ >
+<!ELEMENT item (#PCDATA) >
+<!ATTLIST item
+    link CDATA #REQUIRED >

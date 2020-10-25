@@ -1,0 +1,32 @@
+body {
+    border: 10px solid lightblue;
+    background-image: linear-gradient(lightblue, lightcyan);
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {font-size: 25px;}
+
+p {font-size: 20px}
+
+li{font-size: 20px;}
+
+img{
+    width: 400px;
+    height: 250px;
+}
+
+vermelho {color: red;}
+verde {color: green;}
+azul {color: blue;}
+roxo {color: blueviolet;}
+rosa {color: palevioletred;}
+laranja {color: orange;}
+
+table {text-align: left;}
+tr {vertical-align: top;}
+th {width: 10%;}
