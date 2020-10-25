@@ -18,20 +18,12 @@
   
   <abstract>
     <paragrafo>
-      <texto>str1234</texto>
-      <formatado tipo="bold">str1234</formatado>
-      <texto>str1234</texto>
-      <link_interno link="???">str1234</link_interno>
-      <texto>str1234</texto>
-      <link_externo link="str1234">str1234</link_externo>
-      <texto>str1234</texto>
+      <texto>Este trabalho consistiu em analisar uma página Web e definir um ficheiro DTD para a mesma tendo em conta as requisições do professor.</texto>
     </paragrafo>
   </abstract>
   
   <deliverables>
-    <item link="???">str1234</item>
-    <item link="???">str1234</item>
-    <item link="???">str1234</item>
+    <item link="https://github.com/sotexera6/PRI2020/blob/main/TP2/PR.dtd">Projeto (DTD)</item>
   </deliverables>
 
 </project>
