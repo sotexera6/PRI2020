@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT arqsits (arqelem)+ >
+
+<!ELEMENT arqelem (tipo, identi, imagem?, descri, crono?, lugar, fregue, concel, codadm?, latitu?, longit?, altitu?, acesso?, quadro?, traarq?, desarq, interp?, intere?, deposi?, biblio+, autor, traarq?, data) >
+
+<!ELEMENT tipo (#PCDATA) >
+<!ATTLIST tipo
+    assunto CDATA #REQUIRED >
+<!ELEMENT identi (#PCDATA) >
+<!ELEMENT imagem (#PCDATA) >
+<!ATTLIST imagem
+    nome CDATA #REQUIRED >
+<!ELEMENT descri (#PCDATA | liga)* >
+<!ELEMENT lugar (#PCDATA | liga)* >
+<!ELEMENT fregue (#PCDATA | liga)* >
+<!ELEMENT crono (#PCDATA) >
+<!ELEMENT concel (#PCDATA) >
+<!ELEMENT codadm (#PCDATA) >
+<!ELEMENT latitu (#PCDATA) >
+<!ELEMENT longit (#PCDATA) >
+<!ELEMENT altitu (#PCDATA) >
+<!ELEMENT acesso (#PCDATA | liga)* >
+<!ELEMENT quadro (#PCDATA | liga)* >
+<!ELEMENT traarq (#PCDATA | liga)* >
+<!ELEMENT desarq (#PCDATA | liga)* >
+<!ELEMENT interp (#PCDATA | liga)* >
+<!ELEMENT intere (#PCDATA | liga)* >
+<!ELEMENT deposi (#PCDATA) >
+<!ELEMENT biblio (#PCDATA | liga)* >
+<!ELEMENT autor (#PCDATA) >
+<!ELEMENT data (#PCDATA) >
+
+<!ELEMENT liga (#PCDATA) >
+<!ATTLIST liga
+    termo CDATA #REQUIRED >
