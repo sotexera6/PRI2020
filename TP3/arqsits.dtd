@@ -4,7 +4,7 @@
 
 <!ELEMENT arqelem (tipo, identi, imagem?, descri, crono?, lugar, fregue, concel, codadm?, latitu?, longit?, altitu?, acesso?, quadro?, traarq?, desarq, interp?, intere?, deposi?, biblio+, autor, traarq?, data) >
 
-<!ELEMENT tipo (#PCDATA) >
+<!ELEMENT tipo EMPTY >
 <!ATTLIST tipo
     assunto CDATA #REQUIRED >
 <!ELEMENT identi (#PCDATA) >
