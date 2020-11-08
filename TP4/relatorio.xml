@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/C:/Users/Sotex/Uni/PRI/Aula4/dtd-xsl/project_record.dtd">
+<pr>
+    <meta>
+        <key>TPC4::a80624</key>
+        <title>Servidor de Arqueossítios</title>
+        <bdate>7 Novembro</bdate>
+        <edate>8 Novembro</edate>
+        <supervisor>José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a80624">
+            <name>Sofia Teixeira</name>
+            <email>a80624@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <paragrafo>Este trabalho foi desenvolvido em 3 fases. </paragrafo>
+        <paragrafo>Primeiramente, foi necessário alterar os ficheiros XSL do trabalho realizado na semana anterior de modo a numerar o HTMLs criados.</paragrafo>
+        <paragrafo>De seguida, criou-se um servidor que recolhe a informação do URL de maneira a chamar o HTML corresponde ao pedido.</paragrafo>
+        <paragrafo>Por fim, alterou-se de novo o ficheiro XSL de maneira a que os links do mesmo passem a fazer um pedido ao servidor em vez de saltarem diretamente para o ficheiro.</paragrafo>
+    </abstract>
+    <deliverables>
+        <link url="https://github.com/sotexera6/PRI2020/blob/main/TP4/arqsits.xsl">Ficheiro XSL</link>
+        <link url="https://github.com/sotexera6/PRI2020/blob/main/TP4/arqsits.xml">Ficheiro XML</link>
+        <link url="https://github.com/sotexera6/PRI2020/blob/main/TP4/servidor.js">Servidor</link>
+    </deliverables>
+</pr>
