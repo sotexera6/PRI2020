@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/C:/Users/Sotex/Uni/PRI/Aula4/dtd-xsl/project_record.dtd">
+<pr>
+    <meta>
+        <key>TPC5::a80624</key>
+        <title>Servidor de Escola de Música</title>
+        <bdate>9 Novembro</bdate>
+        <edate>13 Novembro</edate>
+        <supervisor>José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a80624">
+            <name>Sofia Teixeira</name>
+            <email>a80624@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <paragrafo>Este trabalho foi iniciado abrindo um json server na porta 3000 associado ao ficheiro db.json.</paragrafo>
+        <paragrafo>Prosseguiu-se a formular um servidor na porta 3001 que formula uma página HTML com a qual o cliente pode interagir.</paragrafo>
+        <paragrafo>Assim, o servidor está preparado para, face aos pedidos do cliente, obter a informação do ficheiro json com os filtros pretendidos e fornece-la como resposta na página web.</paragrafo>
+    </abstract>
+    <deliverables>
+        <link url="https://github.com/sotexera6/PRI2020/blob/main/TP5/db.json">Ficheiro JSON</link>
+        <link url="https://github.com/sotexera6/PRI2020/blob/main/TP5/escola.js">Servidor</link>
+    </deliverables>
+</pr>
