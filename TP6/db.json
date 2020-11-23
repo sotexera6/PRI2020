@@ -1,0 +1,60 @@
+{
+  "tarefas": [
+    {
+      "id": "1",
+      "descricao": "aspirar",
+      "responsavel": "Sofia Teixeira",
+      "dataLimite": "2021/01/09",
+      "estado": "pendente"
+    },
+    {
+      "id": "2",
+      "descricao": "limpar o pó",
+      "responsavel": "Joao Gomes",
+      "dataLimite": "2021/01/01",
+      "estado": "pendente"
+    },
+    {
+      "id": "3",
+      "descricao": "arrumar a cozinha",
+      "responsavel": "Dr X",
+      "dataLimite": "2020/12/05",
+      "estado": "pendente"
+    },
+    {
+      "id": "4",
+      "descricao": "comprar fruta",
+      "responsavel": "Sofia Teixeira",
+      "dataLimite": "2020/12/05",
+      "estado": "terminado"
+    },
+    {
+      "id": "5",
+      "descricao": "comprar água",
+      "responsavel": "João Pedro",
+      "dataLimite": "2020/12/03",
+      "estado": "cancelado"
+    },
+    {
+      "id": "6",
+      "descricao": "pintar as portas",
+      "responsavel": "Pintor",
+      "dataLimite": "2020/12/02",
+      "estado": "pendente"
+    },
+    {
+      "id": "7",
+      "descricao": "varrer o pátio",
+      "responsavel": "O Pintas",
+      "dataLimite": "2020/11/29",
+      "estado": "pendente"
+    },
+    {
+      "id": "8",
+      "descricao": "limpar as janelas",
+      "responsavel": "Puppy",
+      "dataLimite": "2020/11/25",
+      "estado": "pendente"
+    }
+  ]
+}
