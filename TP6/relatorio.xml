@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/C:/Users/Sotex/Uni/PRI/Aula4/dtd-xsl/project_record.dtd">
+<pr>
+    <meta>
+        <key>TPC6::a80624</key>
+        <title>Servidor de Lista de Tarefas</title>
+        <bdate>16 Novembro</bdate>
+        <edate>23 Novembro</edate>
+        <supervisor>José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a80624">
+            <name>Sofia Teixeira</name>
+            <email>a80624@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <paragrafo>
+            Este trabalho consistiu em criar uma single page application que funcionasse como uma To-Do List. 
+            Assim, numa página Web seria necessário ter uma secção de adicionar uma nova tarefa à lista, a própria lista de tarefas pendentes e, por fim, a lista das tarefas terminadas ou canceladas.
+        </paragrafo>
+        <paragrafo>
+            Para apresentar estas secções ao cliente, foi criado um form para as novas tarefas e duas tabelas para as tarefas pendentes e concluídas, sendo estes personalizados utilizando a stylesheet w3.css.
+            Nas tarefas pendentes existem dois botões, um para dar a tarefa como terminada e outro para a cancelar, e nas tarefas concluídas tem uma opção de limpar a mesma, eliminando-a.
+        </paragrafo>
+        <paragrafo>
+            Foi implementado um servidor para criar esta To-Do List e gerir os pedidos do cliente. Para lidar com estes, o servidor tinha de conseguir receber pedidos de GET, POST, PUT e DELETE, interagindo com o json-server da base de dados do ficheiro db.json.
+            Desta maneira, quando o cliente adicionava uma nova tarefa era realizado um POST adicionando a nova informação à base de dados.
+            Cada tarefa pendente possui a opção que o cliente a termine ou cancele, o que causa a atualização do seu estado através do método PUT.
+            Como foi acrescentada a possibilidade do cliente decidir limpar uma das tarefas já concluídas, o servidor está preparado para lidar com esta decisão através do método DELETE, limpando assim essa informação da base de dados.
+            Cada uma destas ações são seguidas do método GET para atualizar a página com as novas informações.
+        </paragrafo>
+    </abstract>
+    <deliverables>
+        <link url="https://github.com/sotexera6/PRI2020/blob/main/TP6/servidor.js">Servidor</link>
+        <link url="https://github.com/sotexera6/PRI2020/blob/main/TP6/db.json">Ficheiro JSON</link>
+    </deliverables>
+</pr>
