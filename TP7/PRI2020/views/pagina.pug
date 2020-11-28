@@ -1,0 +1,199 @@
+extends layout
+block content
+    .w3-card-4
+
+        if metodo==="alunos"
+            header.w3-container.w3-teal
+                h3.w3-margin-top Lista de Alunos
+                    a(href="http://localhost:7700/alunos/registar")
+                        button.w3-button.w3-round-xxlarge.w3-text-teal.w3-white.w3-large.w3-right.w3-margin-bottom
+                            b +
+        
+            if lista.length > 0
+                .w3-container
+                    table.w3-table-all
+                        tr
+                            th Número
+                            th Nome
+                            th Github
+                            th
+                        each a in lista
+                            tr
+                                td.w3-padding-medium= a.Número
+                                td.w3-padding-medium
+                                    adress
+                                        a(href=`http://localhost:7700/alunos/${a.Número}`) #{a.Nome}
+                                td.w3-padding-medium 
+                                    a(href=`${a.Git}`) #{a.Git}
+                                td.w3-padding-small
+                                    form(action='/alunos?_method=DELETE', method='POST')
+                                        input(type='hidden', name='Número', pattern="(pg|PG|[aA])[0-9]{5}", value=`${a.Número}`)
+                                        input(type='submit', value='Eliminar').w3-button.w3-blue-grey.w3-hover-red.w3-round.w3-margin-right.w3-small
+            if lista.length == 0
+                .w3-container
+                    p Ainda não há alunos registados
+
+            footer.w3-container.w3-teal
+                p 2020-Novembro
+
+        else if metodo==="aluno"
+            if aluno
+                header.w3-container.w3-teal
+                    h3.w3-margin-top Aluno #{aluno.Número}
+                        a(href=`http://localhost:7700/alunos/editar/${aluno.Número}`)
+                            i(class="fa fa-edit").w3-right.w3-padding
+                
+
+                .w3-container
+                    h4
+                        b Nome
+                    p #{aluno.Nome}
+
+                    h4 
+                        b Github
+                    p 
+                        a(href=`${aluno.Git}`) #{aluno.Git}
+
+                    h4
+                        b Trabalhos Práticos
+                    table.w3-table-all
+                        tr
+                            each val, index in aluno.tpc
+                                th.w3-center tp#{index+1}
+                        tr
+                            each val in aluno.tpc
+                                td.w3-center= val
+                    br
+                footer.w3-container.w3-teal
+                    form(action='/alunos?_method=DELETE', method='POST')
+                        address.w3-padding-16
+                            a(href=`http://localhost:7700/alunos/`) Voltar
+                            input(type='hidden', name='Número', pattern="(pg|PG|[aA])[0-9]{5}", value=`${aluno.Número}`)
+                            input(type='submit', value='Eliminar').w3-button.w3-blue-grey.w3-hover-red.w3-round.w3-medium.w3-right.w3-margin-bottom
+            unless aluno
+                .w3-container
+                    p Aluno não registado.
+
+                footer.w3-container.w3-teal.w3-padding-medium
+                    a(href=`http://localhost:7700/alunos/`) Voltar
+
+        else if metodo==="registar"
+            header.w3-container.w3-teal
+                h3 Novo Aluno
+        
+            .w3-container
+                form(action='/alunos', method='POST')
+                    br
+                    label
+                        b.w3-text-teal Número
+                    input(type='text', name='Número', pattern="(pg|PG|[aA])[0-9]{5}", required).w3-input.w3-border.w3-light-grey.w3-margin-bottom.w3-round
+
+                    label
+                        b.w3-text-teal Nome
+                    input(type='text', name='Nome', required).w3-input.w3-border.w3-light-grey.w3-margin-bottom.w3-round
+
+                    label
+                        b.w3-text-teal Github
+                    input(type='text', name='Git').w3-input.w3-border.w3-light-grey.w3-margin-bottom.w3-round
+
+                    b.w3-text-teal TPCs
+                    p
+                        - var i = 1
+                            while i <= 8
+                                input(type='checkbox', value=`${i}`, name='tpc')
+                                label.w3-margin-right.w3-text-blue-grey  Tp#{i++}
+                    
+                    p
+                        input(type='submit', value='Registar').w3-button.w3-blue-grey.w3-margin-bottom.w3-hover-teal.w3-round.w3-margin-right
+                        input(type='reset', value='Limpar').w3-button.w3-blue-grey.w3-margin-bottom.w3-margin-right.w3-hover-teal.w3-round
+
+            footer.w3-container.w3-teal.w3-padding-medium
+                address.w3-padding-16
+                    a(href=`http://localhost:7700/alunos/`) Voltar
+
+        else if metodo==="editar"
+
+            header.w3-container.w3-teal
+                h3 Editar Aluno
+        
+            .w3-container
+                form(action='/alunos?_method=PUT', method='POST')
+                    br
+                    label
+                        b.w3-text-teal Número
+                    input(type='text', name='Número', pattern="(pg|PG|[aA])[0-9]{5}", value=`${aluno.Número}`).w3-input.w3-border.w3-light-grey.w3-margin-bottom.w3-round
+
+                    label
+                        b.w3-text-teal Nome
+                    input(type='text', name='Nome', value=`${aluno.Nome}`).w3-input.w3-border.w3-light-grey.w3-margin-bottom.w3-round
+
+                    label
+                        b.w3-text-teal Github
+                    input(type='text', name='Git', value=`${aluno.Git}`).w3-input.w3-border.w3-light-grey.w3-margin-bottom.w3-round
+
+                    b.w3-text-teal TPCs
+                    p
+                        - var i = 0
+                            while i < aluno.tpc.length
+                                if aluno.tpc[i] == 1
+                                    input(type='checkbox', value=`${++i}`, name='tpc', checked)
+                                    label.w3-margin-right.w3-text-blue-grey  Tp#{i}
+                                if aluno.tpc[i] == 0
+                                    input(type='checkbox', value=`${++i}`, name='tpc')
+                                    label.w3-margin-right.w3-text-blue-grey  Tp#{i}
+                            while i < 8
+                                input(type='checkbox', value=`${++i}`, name='tpc')
+                                label.w3-margin-right.w3-text-blue-grey  Tp#{i}
+                    
+                    p
+                        input(type='submit', value='Guardar').w3-button.w3-blue-grey.w3-margin-bottom.w3-hover-teal.w3-round.w3-margin-right
+                        input(type='reset', value='Reiniciar').w3-button.w3-blue-grey.w3-margin-bottom.w3-margin-right.w3-hover-teal.w3-round
+
+            footer.w3-container.w3-teal.w3-padding-medium
+                address.w3-padding-16
+                    a(href=`http://localhost:7700/alunos/${aluno.Número}`) Voltar
+
+        else if metodo==="eliminar"
+
+            header.w3-container.w3-red
+                    h3.w3-margin-top Aluno #{aluno.Número} Eliminado
+                
+
+            .w3-container
+                h4.w3-text-red
+                    b Nome
+                p #{aluno.Nome}
+
+                h4.w3-text-red
+                    b Github
+                p 
+                    a(href=`${aluno.Git}`) #{aluno.Git}
+
+                h4.w3-text-red
+                    b Trabalhos Práticos
+                table.w3-table-all
+                    tr
+                        each val, index in aluno.tpc
+                            th.w3-center tp#{index+1}
+                    tr
+                        each val in aluno.tpc
+                            td.w3-center= val
+                br
+            footer.w3-container.w3-red
+                form(action='/alunos', method='POST')
+                    address.w3-padding-16
+                        a(href=`http://localhost:7700/alunos/`) Voltar
+                        input(type='hidden', name='Número', pattern="(pg|PG|[aA])[0-9]{5}", value=`${aluno.Número}`)
+                        input(type='hidden', name='Nome', value=`${aluno.Nome}`)
+                        input(type='hidden', name='Git', value=`${aluno.Git}`)
+                        input(type='hidden', name='tpc', value=`${aluno.tpc[1]}`)
+                        - var i = 0
+                            while i < aluno.tpc.length
+                                if aluno.tpc[i] == 1
+                                    input(type='hidden', value=`${++i}`, name='tpc', checked)
+                                if aluno.tpc[i] == 0
+                                    input(type='hidden', value=`${++i-i}`, name='tpc', checked)
+                        input(type='submit', value='Cancelar').w3-button.w3-red.w3-hover-white.w3-round.w3-medium.w3-right.w3-margin-bottom
+
+            
+        
