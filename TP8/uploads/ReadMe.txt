@@ -1,0 +1,1 @@
+Não deixava ter a pasta no git vazia portanto here we are
