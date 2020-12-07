@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pr SYSTEM "file:/C:/Users/Sotex/Uni/PRI/Aula4/dtd-xsl/project_record.dtd">
+<pr>
+    <meta>
+        <key>TPC6::a80624</key>
+        <title>Servidor de Lista de Tarefas</title>
+        <bdate>30 Novembro</bdate>
+        <edate>7 Dezembro</edate>
+        <supervisor>José Carlos Ramalho</supervisor>
+    </meta>
+    <workteam>
+        <worker num="a80624">
+            <name>Sofia Teixeira</name>
+            <email>a80624@alunos.uminho.pt</email>
+        </worker>
+    </workteam>
+    <abstract>
+        <paragrafo>
+            Este trabalho consistiu em tornar possível o upload de mais que uma imagem no mesmo formulário. 
+            Para tarefa era necessário existir um botão que, ao clicar, criasse e apresentasse um novo input onde escolher uma imagem, criando assim uma lista de inputs.
+            Assim, foi necessário criar uma divisão no html e um função que, recorrendo ao jQuery, adicionasse os inputs referidos nesse local.
+        </paragrafo>
+        <paragrafo>
+            Para além disso, foi necessário mudar o tratamento de ficheiros de modo a lidar com mais quantidade. Assim, foi alterada a opção .single para a opção .array, sendo este (req.files) posteriormente iterado de maneira a lidar com todos os ficheiros recebidos. 
+        </paragrafo>
+    </abstract>
+    <deliverables>
+        <link url="https://github.com/sotexera6/PRI2020/blob/main/TP8/server.js">Servidor</link>
+    </deliverables>
+</pr>
