@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  header.w3-container.w3-blue-grey
+    h1 Aluno #{aluno.id}
+  .w3-container.w3-padding
+    b Nome:
+    span  #{aluno.nome}
+    p
+      b Curso: 
+      adress
+        a(href=`/curso/${aluno.curso}?aluno=${aluno.id}`) #{aluno.curso}
+
+  footer.w3-container.w3-blue-grey.w3-padding-medium
+    address.w3-padding-16
+        a(href=`/`) Voltar ao índice
+        
+    

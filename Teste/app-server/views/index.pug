@@ -1,5 +1,14 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  header.w3-container.w3-blue-grey
+    h1 Lista de Alunos
+  .w3-container
+    ul
+      each a in alunos
+        li
+          adress
+            a(href=`/aluno/${a.id}`) #{a.nome}
+    
+        
+    
